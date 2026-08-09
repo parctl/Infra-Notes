@@ -1,9 +1,9 @@
 site_name: Infra Notes
 site_description: Practical notes on Linux, Networking, DevOps, Containers, Kubernetes and Cloud
-site_url: https://parctl.github.io/Infra-Notes/
+site_url: https://prmctl.github.io/Infra-Notes/
 
-repo_name: parctl/Infra-Notes
-repo_url: https://github.com/parctl/Infra-Notes
+repo_name: prmctl/Infra-Notes
+repo_url: https://github.com/prmctl/Infra-Notes
 edit_uri: edit/main/docs/
 
 copyright: >
@@ -153,7 +153,7 @@ extra:
 
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/parctl
+      link: https://github.com/prmctl
       name: GitHub
 
 nav:

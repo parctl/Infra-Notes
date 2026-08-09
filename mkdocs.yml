@@ -1,0 +1,342 @@
+site_name: Infra Notes
+site_description: Practical notes on Linux, Networking, DevOps, Containers, Kubernetes and Cloud
+site_url: https://parctl.github.io/Infra-Notes/
+
+repo_name: parctl/Infra-Notes
+repo_url: https://github.com/parctl/Infra-Notes
+edit_uri: edit/main/docs/
+
+copyright: >
+  Copyright &copy; 2026 Infra Notes
+
+theme:
+  name: material
+
+  language: en
+
+  logo: assets/logo.svg
+  favicon: assets/favicon.png
+
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/server-network
+
+  palette:
+    # Dark theme - default
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: cyan
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+    # Light theme
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+  features:
+    # Navigation
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.top
+    - navigation.indexes
+
+    # Fast navigation
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.tracking
+
+    # Search
+    - search.suggest
+    - search.highlight
+    - search.share
+
+    # Header
+    - header.autohide
+
+    # Code
+    - content.code.copy
+    - content.code.annotate
+
+    # Content
+    - content.tabs.link
+    - content.tooltips
+    - content.action.edit
+    - content.action.view
+
+plugins:
+  - search
+
+  - blog:
+      blog_dir: blog
+      post_dir: "{blog}/posts"
+
+      archive: true
+      archive_name: Archive
+
+      categories: true
+      categories_name: Categories
+
+      pagination: true
+      pagination_per_page: 10
+
+      post_date_format: long
+      post_url_date_format: yyyy/MM/dd
+      post_url_format: "{date}/{slug}"
+
+  - tags
+
+markdown_extensions:
+  # Basic
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+
+  # Table of contents
+  - toc:
+      permalink: true
+      permalink_title: Anchor link to this section
+
+  # Highlighting
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+
+  - pymdownx.inlinehilite
+
+  - pymdownx.snippets
+
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+  # Tabs
+  - pymdownx.tabbed:
+      alternate_style: true
+
+  # Details / expandable blocks
+  - pymdownx.details
+
+  # Keyboard keys
+  - pymdownx.keys
+
+  # Mark / insert / delete
+  - pymdownx.mark
+  - pymdownx.caret
+  - pymdownx.tilde
+
+  # Icons & emojis
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra:
+  generator: false
+
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/parctl
+      name: GitHub
+
+nav:
+  - Home:
+      - Home: index.md
+
+  - Linux:
+      - Overview: linux/index.md
+
+      - Fundamentals:
+          - Overview: linux/fundamentals/index.md
+          - Filesystem: linux/fundamentals/filesystem.md
+          - Permissions: linux/fundamentals/permissions.md
+          - Users & Groups: linux/fundamentals/users-groups.md
+          - Processes: linux/fundamentals/processes.md
+
+      - Networking:
+          - Overview: linux/networking/index.md
+          - Network Interfaces: linux/networking/interfaces.md
+          - IP & Routing: linux/networking/routing.md
+          - DNS: linux/networking/dns.md
+          - iproute2: linux/networking/iproute2.md
+          - Network Namespaces: linux/networking/namespaces.md
+          - Linux Bridge: linux/networking/bridge.md
+          - veth: linux/networking/veth.md
+          - iptables: linux/networking/iptables.md
+          - nftables: linux/networking/nftables.md
+
+      - Storage:
+          - Overview: linux/storage/index.md
+          - Filesystems: linux/storage/filesystems.md
+          - Mount: linux/storage/mount.md
+          - LVM: linux/storage/lvm.md
+
+      - systemd:
+          - Overview: linux/systemd/index.md
+          - Services: linux/systemd/services.md
+          - Timers: linux/systemd/timers.md
+          - Journald: linux/systemd/journald.md
+
+      - Security:
+          - Overview: linux/security/index.md
+          - SSH: linux/security/ssh.md
+          - sudo: linux/security/sudo.md
+
+  - Networking:
+      - Overview: networking/index.md
+
+      - Fundamentals:
+          - Overview: networking/fundamentals/index.md
+          - OSI Model: networking/fundamentals/osi.md
+          - TCP/IP Model: networking/fundamentals/tcp-ip.md
+          - MAC & ARP: networking/fundamentals/arp.md
+          - IPv4: networking/fundamentals/ipv4.md
+          - IPv6: networking/fundamentals/ipv6.md
+          - Subnetting: networking/fundamentals/subnetting.md
+
+      - TCP & UDP:
+          - Overview: networking/transport/index.md
+          - TCP: networking/transport/tcp.md
+          - UDP: networking/transport/udp.md
+          - TCP Handshake: networking/transport/tcp-handshake.md
+
+      - DNS:
+          - Overview: networking/dns/index.md
+          - DNS Records: networking/dns/records.md
+          - Recursive DNS: networking/dns/recursive.md
+          - Troubleshooting: networking/dns/troubleshooting.md
+
+      - Routing:
+          - Overview: networking/routing/index.md
+          - Static Routing: networking/routing/static.md
+          - OSPF: networking/routing/ospf.md
+          - BGP: networking/routing/bgp.md
+
+      - Switching:
+          - Overview: networking/switching/index.md
+          - VLAN: networking/switching/vlan.md
+          - Trunking: networking/switching/trunking.md
+          - STP: networking/switching/stp.md
+
+      - Network Services:
+          - DHCP: networking/services/dhcp.md
+          - NAT: networking/services/nat.md
+          - VPN: networking/services/vpn.md
+
+      - Troubleshooting:
+          - Overview: networking/troubleshooting/index.md
+          - ping: networking/troubleshooting/ping.md
+          - traceroute: networking/troubleshooting/traceroute.md
+          - tcpdump: networking/troubleshooting/tcpdump.md
+          - Wireshark: networking/troubleshooting/wireshark.md
+
+  - Containers:
+      - Overview: containers/index.md
+
+      - Docker:
+          - Overview: containers/docker/index.md
+          - Images: containers/docker/images.md
+          - Containers: containers/docker/containers.md
+          - Volumes: containers/docker/volumes.md
+          - Networking: containers/docker/networking.md
+          - Docker Compose: containers/docker/compose.md
+
+      - Internals:
+          - Namespaces: containers/internals/namespaces.md
+          - Cgroups: containers/internals/cgroups.md
+          - OverlayFS: containers/internals/overlayfs.md
+
+  - Kubernetes:
+      - Overview: kubernetes/index.md
+
+      - Architecture:
+          - Overview: kubernetes/architecture/index.md
+          - Control Plane: kubernetes/architecture/control-plane.md
+          - Worker Node: kubernetes/architecture/worker-node.md
+
+      - Workloads:
+          - Pods: kubernetes/workloads/pods.md
+          - Deployments: kubernetes/workloads/deployments.md
+          - StatefulSets: kubernetes/workloads/statefulsets.md
+          - DaemonSets: kubernetes/workloads/daemonsets.md
+
+      - Networking:
+          - Overview: kubernetes/networking/index.md
+          - Services: kubernetes/networking/services.md
+          - Ingress: kubernetes/networking/ingress.md
+          - DNS: kubernetes/networking/dns.md
+          - CNI: kubernetes/networking/cni.md
+
+      - Storage:
+          - Volumes: kubernetes/storage/volumes.md
+          - PV & PVC: kubernetes/storage/pv-pvc.md
+
+      - Security:
+          - RBAC: kubernetes/security/rbac.md
+          - Network Policies: kubernetes/security/network-policies.md
+
+      - Troubleshooting:
+          - Overview: kubernetes/troubleshooting/index.md
+
+  - DevOps:
+      - Overview: devops/index.md
+
+      - Git:
+          - Overview: devops/git/index.md
+          - Branching: devops/git/branching.md
+          - Rebase: devops/git/rebase.md
+
+      - CI/CD:
+          - Overview: devops/cicd/index.md
+          - GitHub Actions: devops/cicd/github-actions.md
+          - GitLab CI: devops/cicd/gitlab-ci.md
+
+      - Infrastructure as Code:
+          - Terraform: devops/iac/terraform.md
+          - Ansible: devops/iac/ansible.md
+
+      - GitOps:
+          - Overview: devops/gitops/index.md
+          - Argo CD: devops/gitops/argocd.md
+
+  - Observability:
+      - Overview: observability/index.md
+      - Monitoring:
+          - Prometheus: observability/monitoring/prometheus.md
+          - Grafana: observability/monitoring/grafana.md
+      - Logging:
+          - Loki: observability/logging/loki.md
+      - Tracing:
+          - OpenTelemetry: observability/tracing/opentelemetry.md
+
+  - Cloud:
+      - Overview: cloud/index.md
+
+      - AWS:
+          - Overview: cloud/aws/index.md
+          - VPC: cloud/aws/vpc.md
+          - EC2: cloud/aws/ec2.md
+          - IAM: cloud/aws/iam.md
+
+      - Azure:
+          - Overview: cloud/azure/index.md
+
+  - Blog:
+      - blog/index.md

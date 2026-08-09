@@ -1,0 +1,92 @@
+:root {
+  --md-primary-fg-color: #0b0f19;
+  --md-primary-fg-color--light: #111827;
+  --md-primary-fg-color--dark: #030712;
+
+  --md-accent-fg-color: #22d3ee;
+}
+
+/* Wider content area */
+.md-grid {
+   max-width: 95%;
+}
+
+/* Dark page background */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #090d14;
+  --md-default-bg-color--light: #0d131d;
+  --md-default-fg-color: #e5e7eb;
+
+  --md-code-bg-color: #0d1117;
+}
+
+/* Header */
+.md-header {
+  background: rgba(5, 10, 18, 0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Navigation tabs */
+.md-tabs {
+  background: rgba(5, 10, 18, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Links */
+.md-typeset a {
+  transition: color 0.2s ease;
+}
+
+/* Headings */
+.md-typeset h1 {
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+.md-typeset h2 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Code */
+.md-typeset code {
+  border-radius: 6px;
+}
+
+.md-typeset pre > code {
+  border-radius: 10px;
+}
+
+/* Cards */
+.grid.cards > ul > li {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.grid.cards > ul > li:hover {
+  transform: translateY(-3px);
+  border-color: rgba(34, 211, 238, 0.45);
+  background: rgba(34, 211, 238, 0.035);
+}
+
+/* Tables */
+.md-typeset table:not([class]) {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Blockquotes */
+.md-typeset blockquote {
+  border-left-color: #22d3ee;
+}
+
+/* Selection */
+::selection {
+  background: rgba(34, 211, 238, 0.25);
+}
